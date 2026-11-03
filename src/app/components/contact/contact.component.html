@@ -1,0 +1,149 @@
+<section class="contact section" id="contatti">
+
+  <div class="contact-bg"></div>
+
+  <div class="container contact-layout">
+
+    <div class="contact-copy reveal">
+
+      <span class="eyebrow">HAI UN PROGETTO IN MENTE?</span>
+
+      <h2 class="section-title">
+        Facciamolo<br>
+        <span>succedere.</span>
+      </h2>
+
+      <p class="section-copy">
+        Raccontaci cosa vuoi realizzare.
+        Ti risponderemo per capire insieme
+        la soluzione migliore.
+      </p>
+
+      <div class="contact-direct">
+        <span>SCRIVICI DIRETTAMENTE</span>
+        <a href="mailto:gruppovanta@gmail.com">
+          gruppovanta@gmail.com ↗
+        </a>
+      </div>
+
+    </div>
+
+    <form class="contact-form reveal" (ngSubmit)="sendEmail()">
+
+      <div class="form-row">
+
+        <label>
+          IL TUO NOME
+          <input
+            name="name"
+            [(ngModel)]="form.name"
+            required
+            placeholder="Come ti chiami?"
+          >
+        </label>
+
+        <label>
+          EMAIL
+          <input
+            name="email"
+            type="email"
+            [(ngModel)]="form.email"
+            required
+            placeholder="nome@azienda.it"
+          >
+        </label>
+
+      </div>
+
+      <label>
+        DI COSA HAI BISOGNO?
+
+        <select name="service" [(ngModel)]="form.service">
+          <option>Sito web / Web app</option>
+          <option>VANTA AI</option>
+          <option>Google Business</option>
+          <option>SEO & ottimizzazione</option>
+          <option>Mockup / UX UI</option>
+          <option>Altro</option>
+        </select>
+      </label>
+
+      <label>
+        RACCONTACI IL PROGETTO
+
+        <textarea
+          name="message"
+          [(ngModel)]="form.message"
+          rows="4"
+          required
+          placeholder="Descrivici brevemente la tua idea..."
+        ></textarea>
+      </label>
+
+      <button class="btn submit-btn" type="submit">
+        Invia la richiesta <span>↗</span>
+      </button>
+
+      <p class="form-note">
+        Si aprirà il tuo programma email con la richiesta già
+        compilata. Nessun dato viene inviato o salvato su questo sito.
+      </p>
+
+    </form>
+
+  </div>
+
+  <!-- SEDE VANTALAB -->
+
+  <div class="container location-wrap reveal">
+
+    <div class="location-heading">
+
+      <div>
+        <span class="eyebrow">DOVE SIAMO</span>
+
+        <h3>
+          Ci trovi a <span>Verona.</span>
+        </h3>
+      </div>
+
+      <a
+        class="location-address"
+        href="https://www.google.com/maps/search/?api=1&query=Piazzale+Ludovico+Antonio+Scuro+3%2C+Verona"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Piazzale Ludovico Antonio Scuro, 3<br>
+        Borgo Roma — Verona
+
+        <b>↗</b>
+      </a>
+
+    </div>
+
+    <div class="map-frame">
+
+      <iframe
+        title="Sede VANTALAB - Borgo Roma, Verona"
+        src="https://www.google.com/maps?q=Piazzale%20Ludovico%20Antonio%20Scuro%203%2C%20Verona&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        allowfullscreen
+      ></iframe>
+
+    </div>
+
+    <div class="location-bottom">
+      <span>VANTALAB / VERONA, ITALY</span>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Piazzale+Ludovico+Antonio+Scuro+3%2C+Verona"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        OTTIENI INDICAZIONI ↗
+      </a>
+    </div>
+
+  </div>
+
+</section>

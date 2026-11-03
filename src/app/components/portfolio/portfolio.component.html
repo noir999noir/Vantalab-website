@@ -1,0 +1,70 @@
+<section class="section portfolio" id="portfolio">
+  <div class="container">
+
+    <div class="portfolio-head reveal">
+      <div>
+        <span class="eyebrow">SELECTED WORKS</span>
+        <h2 class="section-title">
+          Progetti che<br>
+          <span>parlano da soli.</span>
+        </h2>
+      </div>
+
+      <p class="section-copy">
+        Progetti reali, identità diverse. Un unico approccio:
+        design curato, tecnologia e attenzione agli obiettivi.
+      </p>
+    </div>
+
+    <div class="project-grid">
+
+      @for (project of projects; track project.number) {
+        <a
+          class="project-card reveal"
+          [href]="project.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.aria-label]="'Visita il sito ' + project.title"
+        >
+
+          <div class="project-preview" [class]="project.cls">
+
+            <div class="preview-nav">
+              <b>V.</b>
+              <span>VANTALAB / SELECTED PROJECT</span>
+              <span>{{ project.number }} ↗</span>
+            </div>
+
+            <div class="preview-center">
+              <small>{{ project.type }}</small>
+              <strong>{{ project.title }}</strong>
+              <i>{{ project.description }}</i>
+            </div>
+
+            <div class="preview-foot">
+              <span>VISIT WEBSITE</span>
+              <span>↗</span>
+            </div>
+
+          </div>
+
+          <div class="project-info">
+            <div>
+              <span>{{ project.number }} / {{ project.category }}</span>
+              <h3>{{ project.title }}</h3>
+            </div>
+
+            <span class="project-link">↗</span>
+          </div>
+
+        </a>
+      }
+
+    </div>
+
+    <p class="portfolio-note">
+      SELECTED DIGITAL PROJECTS — CLICK TO EXPLORE
+    </p>
+
+  </div>
+</section>

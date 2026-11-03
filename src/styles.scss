@@ -1,1 +1,43 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #050505;
+  --bg-soft: #0b0b0d;
+  --panel: #101013;
+  --panel-2: #151518;
+  --text: #f5f5f5;
+  --muted: #929298;
+  --red: #ff1028;
+  --red-dark: #8b0012;
+  --line: rgba(255,255,255,.10);
+  --container: 1240px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; background: var(--bg); }
+body { margin: 0; padding: 0; min-width: 320px; background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+body, app-root { display: block; min-height: 100vh; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button { color: inherit; }
+img { display: block; max-width: 100%; }
+::selection { background: var(--red); color: white; }
+.container { width: min(var(--container), calc(100% - 64px)); margin-inline: auto; }
+.section { padding: 125px 0; position: relative; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--red); font-size: 10px; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; }
+.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--red); }
+.section-title { max-width: 760px; margin: 20px 0 0; font-size: clamp(38px, 5.5vw, 72px); line-height: .98; letter-spacing: -.065em; font-weight: 600; }
+.section-title span, .accent { color: var(--red); }
+.section-copy { color: var(--muted); line-height: 1.75; font-size: 15px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 14px; min-height: 52px; padding: 0 23px; border: 1px solid transparent; border-radius: 999px; background: var(--red); color: white; font-size: 12px; font-weight: 700; transition: .3s ease; cursor: pointer; }
+.btn:hover { background: #ff3044; transform: translateY(-3px); box-shadow: 0 12px 35px rgba(255,16,40,.25); }
+.btn--ghost { background: transparent; border-color: rgba(255,255,255,.25); }
+.btn--ghost:hover { border-color: var(--red); background: rgba(255,16,40,.08); box-shadow: none; }
+.grid-noise { position: relative; isolation: isolate; }
+.grid-noise::after { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .12; background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px); background-size: 70px 70px; mask-image: linear-gradient(to bottom, black, transparent 85%); }
+@media (max-width: 700px) { .container { width: min(100% - 40px, var(--container)); } .section { padding: 86px 0; } .section-title { font-size: clamp(37px, 11vw, 54px); } }
+
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }

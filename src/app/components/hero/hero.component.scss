@@ -1,0 +1,17 @@
+.hero { min-height: 790px; height: min(900px, 100svh); padding-top: 88px; display: flex; align-items: center; overflow: hidden; background: radial-gradient(ellipse at 78% 52%, rgba(110,0,15,.16), transparent 38%), #050505; }
+.hero-content { position: relative; z-index: 2; padding-top: 25px; }
+.hero-kicker { color: #b4b4b8; font-size: 10px; letter-spacing: .22em; display: flex; align-items: center; gap: 12px; }
+.hero-kicker i { color: var(--red); font-style: normal; }
+.pulse { width: 7px; height: 7px; background: var(--red); border-radius: 50%; box-shadow: 0 0 15px var(--red); }
+.hero-title { font-size: clamp(66px, 9vw, 126px); letter-spacing: -.085em; line-height: .91; font-weight: 600; margin: 32px 0 25px; max-width: 900px; }
+.hero-title span { color: var(--red); }
+.hero-copy { max-width: 445px; color: #a3a3a8; font-size: 15px; line-height: 1.8; }
+.hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 34px; }
+.text-link { font-size: 12px; color: #ddd; }.text-link span { color: var(--red); margin-left: 10px; }
+.hero-watermark { position: absolute; right: 8%; top: 11%; font-size: min(75vw, 820px); line-height: 1; font-weight: 700; letter-spacing: -.16em; color: transparent; -webkit-text-stroke: 1px rgba(255,16,40,.12); transform: scaleX(.85); text-shadow: 0 0 90px rgba(255,0,30,.08); pointer-events: none; }
+.hero-watermark::after { content: 'V'; position: absolute; inset: 0; color: transparent; background: linear-gradient(130deg, transparent 35%, rgba(255,16,40,.16), transparent 65%); background-clip: text; -webkit-background-clip: text; }
+.hero-glow { position: absolute; width: 480px; height: 480px; right: 12%; top: 30%; background: rgba(255,0,30,.08); filter: blur(120px); border-radius: 50%; }
+.hero-meta { margin-top: 100px; padding-top: 18px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; color: #777; font-size: 9px; letter-spacing: .16em; }
+.hero-meta span:first-child { color: var(--red); }
+.hero-side-note { position: absolute; right: 30px; top: 48%; writing-mode: vertical-rl; color: #666; font-size: 8px; letter-spacing: .25em; }
+@media(max-width:700px) { .hero { min-height: 760px; height: 100svh; max-height: 900px; padding-top: 74px; }.hero-title { font-size: clamp(57px, 15vw, 84px); margin-top: 28px; }.hero-copy { font-size: 14px; max-width: 330px; }.hero-watermark { font-size: 120vw; right: -18%; top: 25%; opacity: .7; }.hero-meta { margin-top: 75px; }.hero-meta span:nth-child(2) { display: none; }.hero-side-note { display: none; }.hero-actions { gap: 20px; flex-wrap: wrap; } }

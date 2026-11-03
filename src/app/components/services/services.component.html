@@ -1,0 +1,14 @@
+<section class="section services" id="servizi">
+  <div class="container">
+    <div class="section-head reveal"><div><span class="eyebrow">COSA FACCIAMO</span><h2 class="section-title">La tecnologia giusta.<br><span>Il design che serve.</span></h2></div><p class="section-copy">Dalla prima idea al lancio: un unico partner per costruire, migliorare e far crescere la tua presenza digitale.</p></div>
+    <div class="service-grid">
+      @for (service of services; track service.n) {
+        <article class="service-card reveal" [class.featured]="service.n === '02'">
+          <div class="card-top"><span>{{ service.n }}</span><span class="service-icon">{{ service.icon }}</span></div>
+          <div><p class="service-tag">{{ service.tag }}</p><h3>{{ service.title }}</h3><p class="service-desc">{{ service.desc }}</p></div>
+          <a href="#contatti" class="card-arrow" aria-label="Richiedi informazioni">↗</a>
+        </article>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,240 @@
+.portfolio {
+  background: #09090a;
+}
+
+.portfolio-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 55px;
+
+  .section-copy {
+    max-width: 330px;
+  }
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px 18px;
+}
+
+.project-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.project-card:first-child {
+  grid-column: span 2;
+}
+
+.project-preview {
+  height: 310px;
+  padding: 20px 24px;
+  background: #171719;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition:
+    transform 0.45s cubic-bezier(.2, .7, .2, 1),
+    border-color 0.35s;
+}
+
+.project-card:first-child .project-preview {
+  height: 440px;
+}
+
+.project-preview::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: .8;
+
+  background:
+    radial-gradient(
+      ellipse at 70% 65%,
+      rgba(255, 0, 35, .22),
+      transparent 42%
+    ),
+    linear-gradient(
+      120deg,
+      transparent 30%,
+      rgba(255, 255, 255, .04)
+    );
+
+  transition: opacity .35s;
+}
+
+.project-two::before {
+  background:
+    radial-gradient(
+      ellipse at 70% 45%,
+      rgba(106, 28, 255, .28),
+      transparent 50%
+    ),
+    #101014;
+}
+
+.project-three::before {
+  background:
+    radial-gradient(
+      ellipse at 25% 65%,
+      rgba(255, 16, 40, .24),
+      transparent 45%
+    ),
+    #131315;
+}
+
+.project-four::before {
+  background:
+    radial-gradient(
+      ellipse at 75% 55%,
+      rgba(255, 0, 30, .25),
+      transparent 45%
+    ),
+    linear-gradient(130deg, #181818, #080808);
+}
+
+.project-five::before {
+  background:
+    radial-gradient(
+      ellipse at 30% 45%,
+      rgba(210, 210, 210, .13),
+      transparent 48%
+    ),
+    #101014;
+}
+
+.project-card:hover .project-preview {
+  transform: translateY(-5px);
+  border-color: rgba(255, 30, 55, .55);
+}
+
+.project-card:hover .project-preview::before {
+  opacity: 1;
+}
+
+.preview-nav,
+.preview-foot {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: #aaa;
+  font-size: 8px;
+  letter-spacing: .16em;
+}
+
+.preview-nav b {
+  color: white;
+  font-size: 16px;
+}
+
+.preview-center {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 560px;
+}
+
+.preview-center small {
+  color: var(--red);
+  font-size: 8px;
+  letter-spacing: .2em;
+}
+
+.preview-center strong {
+  font-size: clamp(30px, 5vw, 64px);
+  letter-spacing: -.07em;
+  line-height: .95;
+  max-width: 600px;
+}
+
+.preview-center i {
+  font-style: normal;
+  color: #999;
+  font-size: 11px;
+  letter-spacing: .03em;
+  line-height: 1.5;
+}
+
+.preview-foot {
+  color: #ddd;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px 2px;
+}
+
+.project-info span {
+  color: #888;
+  font-size: 9px;
+  letter-spacing: .12em;
+}
+
+.project-info h3 {
+  margin: 7px 0 0;
+  font-size: 18px;
+}
+
+.project-link {
+  color: var(--red) !important;
+  font-size: 20px !important;
+  transition: transform .3s;
+}
+
+.project-card:hover .project-link {
+  transform: translate(3px, -3px);
+}
+
+.portfolio-note {
+  text-align: center;
+  color: #666;
+  font-size: 8px;
+  letter-spacing: .2em;
+  margin-top: 50px;
+}
+
+@media (max-width: 650px) {
+  .portfolio-head {
+    display: block;
+  }
+
+  .portfolio-head .section-copy {
+    margin-top: 22px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card:first-child {
+    grid-column: auto;
+  }
+
+  .project-preview,
+  .project-card:first-child .project-preview {
+    height: 280px;
+    padding: 16px;
+  }
+
+  .preview-center strong {
+    font-size: clamp(30px, 9vw, 48px);
+  }
+}
