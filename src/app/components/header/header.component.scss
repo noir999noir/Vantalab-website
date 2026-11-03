@@ -1,28 +1,246 @@
-.site-header { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 88px; border-bottom: 1px solid transparent; transition: .3s; }
-.site-header.scrolled { background: rgba(5,5,5,.88); backdrop-filter: blur(18px); border-color: var(--line); }
-.nav-wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; }
-.brand { display: inline-flex; align-items: center; gap: 11px; font-size: 17px; font-weight: 700; letter-spacing: .12em; }
-.brand img { width: 29px; height: 29px; object-fit: cover; object-position: center; border-radius: 50%; }
-.desktop-nav { display: flex; gap: 35px; margin-left: 70px; }
-.desktop-nav a { color: #aaa; font-size: 12px; transition: color .25s; }
-.desktop-nav a:hover { color: white; }
-.nav-cta { border: 1px solid rgba(255,16,40,.65); border-radius: 30px; padding: 13px 19px; font-size: 11px; font-weight: 600; }
-.nav-cta span { color: var(--red); margin-left: 13px; }
-.menu-toggle { display: none; border: 0; background: none; width: 42px; height: 42px; padding: 10px; }
-.menu-toggle span { display: block; height: 1px; background: white; margin: 7px 0; transition: .3s; }
-.mobile-menu { display: none; }
-@media(max-width:850px) {
-  .site-header { height: 74px; }
-  .desktop-nav, .nav-cta { display: none; }
-  .menu-toggle { display: block; z-index: 3; }
-  .menu-open .menu-toggle span:first-child { transform: translateY(4px) rotate(45deg); }
-  .menu-open .menu-toggle span:last-child { transform: translateY(-4px) rotate(-45deg); }
-  .mobile-menu { display: block; position: fixed; inset: 0; z-index: -1; background: #070708; transform: translateY(-105%); transition: transform .55s cubic-bezier(.7,0,.2,1); }
-  .mobile-menu.open { transform: translateY(0); }
-  .mobile-menu-inner { height: 100%; padding: 115px 25px 30px; display: flex; flex-direction: column; }
-  .menu-label, .mobile-bottom { color: var(--red); font-size: 9px; letter-spacing: .2em; }
-  .mobile-menu-inner > a:not(.mobile-contact) { display: flex; align-items: baseline; gap: 18px; padding: 13px 0; border-bottom: 1px solid var(--line); font-size: clamp(36px, 10vw, 54px); font-weight: 600; letter-spacing: -.06em; }
-  .mobile-menu-inner small { color: var(--red); font-size: 10px; letter-spacing: 0; }
-  .mobile-contact { margin-top: 30px; padding: 18px 20px; background: var(--red); border-radius: 50px; font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; }
-  .mobile-bottom { margin-top: auto; }
+.site-header {
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 88px;
+  border-bottom: 1px solid transparent;
+  transition: background .3s, border-color .3s;
+}
+
+.site-header.scrolled {
+  background: rgba(5, 5, 5, .88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-color: var(--line);
+}
+
+.nav-wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: white;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 29px;
+  height: 29px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 35px;
+  margin-left: 70px;
+}
+
+.desktop-nav a {
+  color: #aaa;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color .25s;
+}
+
+.desktop-nav a:hover {
+  color: white;
+}
+
+.nav-cta {
+  border: 1px solid rgba(255, 16, 40, .65);
+  border-radius: 30px;
+  padding: 13px 19px;
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  transition: background .3s, border-color .3s;
+}
+
+.nav-cta:hover {
+  background: rgba(255, 16, 40, .1);
+  border-color: var(--red);
+}
+
+.nav-cta span {
+  color: var(--red);
+  margin-left: 13px;
+}
+
+/* HAMBURGER */
+
+.menu-toggle {
+  display: none;
+  position: relative;
+  border: 0;
+  background: none;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 1px;
+  background: white;
+  margin: 7px 0;
+  transition: transform .3s ease;
+}
+
+/* MOBILE MENU - NASCOSTO DI DEFAULT */
+
+.mobile-menu {
+  display: none;
+}
+
+@media (max-width: 850px) {
+
+  .site-header {
+    height: 74px;
+  }
+
+  .desktop-nav,
+  .nav-cta {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  /* ANIMAZIONE HAMBURGER */
+
+  .menu-open .menu-toggle span:first-child {
+    transform: translateY(4px) rotate(45deg);
+  }
+
+  .menu-open .menu-toggle span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+  }
+
+  /* MENU CHIUSO */
+
+  .mobile-menu {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    background: #070708;
+
+    transform: translate3d(0, -105%, 0);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      transform .55s cubic-bezier(.7, 0, .2, 1),
+      opacity .35s ease,
+      visibility .55s;
+  }
+
+  /* MENU APERTO */
+
+  .mobile-menu.open {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-inner {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 115px 25px 30px;
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .menu-label,
+  .mobile-bottom {
+    color: var(--red);
+    font-size: 9px;
+    letter-spacing: .2em;
+  }
+
+  .mobile-menu-inner > a:not(.mobile-contact) {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+
+    color: white;
+    text-decoration: none;
+
+    font-size: clamp(36px, 10vw, 54px);
+    font-weight: 600;
+    letter-spacing: -.06em;
+  }
+
+  .mobile-menu-inner small {
+    color: var(--red);
+    font-size: 10px;
+    letter-spacing: 0;
+  }
+
+  .mobile-contact {
+    margin-top: 30px;
+    padding: 18px 20px;
+
+    background: var(--red);
+    border-radius: 50px;
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobile-bottom {
+    margin-top: auto;
+    padding-top: 30px;
+  }
+}
+
+/* MOBILE PICCOLI */
+
+@media (max-width: 380px) {
+
+  .mobile-menu-inner {
+    padding: 100px 22px 25px;
+  }
+
+  .mobile-menu-inner > a:not(.mobile-contact) {
+    font-size: 34px;
+    padding: 11px 0;
+  }
+
 }
