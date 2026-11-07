@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
+
   projects = [
     {
       number: '01',
@@ -48,10 +49,29 @@ export class PortfolioComponent {
       number: '05',
       type: 'CORPORATE / WEB DEVELOPMENT',
       title: 'Guri Group',
-      category: 'Corporate',
+      category: 'Corporate — Version 1',
       url: 'https://gurigroup.eu/',
       cls: 'project-five',
-      description: 'Una presenza web per raccontare servizi e attività del gruppo.'
+      description: 'La prima esperienza digitale realizzata per Guri Group.'
+    },
+    {
+      number: '06',
+      type: 'CORPORATE / WEB DEVELOPMENT',
+      title: 'Guri Group V2',
+      category: 'Corporate — Version 2',
+      url: 'https://gurigroup-ten.vercel.app/',
+      cls: 'project-six',
+      description: 'Una nuova evoluzione del progetto, con un’esperienza digitale rinnovata.'
+    },
+    {
+      number: '07',
+      type: 'AUTOMOTIVE / DIGITAL EXPERIENCE',
+      title: 'Autofficina Tegazzini',
+      category: 'Automotive',
+      url: 'https://autofficina-tegazzini.vercel.app/',
+      cls: 'project-seven',
+      description: 'Un’esperienza digitale dedicata ai servizi e all’identità dell’officina.'
     }
   ];
+
 }
