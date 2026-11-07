@@ -1,14 +1,116 @@
 <section class="section services" id="servizi">
+
   <div class="container">
-    <div class="section-head reveal"><div><span class="eyebrow">COSA FACCIAMO</span><h2 class="section-title">La tecnologia giusta.<br><span>Il design che serve.</span></h2></div><p class="section-copy">Dalla prima idea al lancio: un unico partner per costruire, migliorare e far crescere la tua presenza digitale.</p></div>
-    <div class="service-grid">
-      @for (service of services; track service.n) {
-        <article class="service-card reveal" [class.featured]="service.n === '02'">
-          <div class="card-top"><span>{{ service.n }}</span><span class="service-icon">{{ service.icon }}</span></div>
-          <div><p class="service-tag">{{ service.tag }}</p><h3>{{ service.title }}</h3><p class="service-desc">{{ service.desc }}</p></div>
-          <a href="#contatti" class="card-arrow" aria-label="Richiedi informazioni">↗</a>
-        </article>
-      }
+
+    <div class="section-head reveal">
+
+      <div>
+        <span class="eyebrow">COSA FACCIAMO</span>
+
+        <h2 class="section-title">
+          La tecnologia giusta.<br>
+          <span>Il design che serve.</span>
+        </h2>
+      </div>
+
+      <p class="section-copy">
+        Dalla prima idea al lancio: un unico partner per costruire,
+        migliorare e far crescere la tua presenza digitale.
+      </p>
+
     </div>
+
+    <div class="service-grid">
+
+      @for (service of services; track service.n) {
+
+        <article
+          class="service-card reveal"
+          [class.featured]="service.n === '02'"
+        >
+
+          <div class="card-top">
+
+            <span>{{ service.n }}</span>
+
+            <div class="service-icon" aria-hidden="true">
+
+              @if (service.icon === 'arrow') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 17 17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              }
+
+              @if (service.icon === 'spark') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2v20"></path>
+                  <path d="M2 12h20"></path>
+                  <path d="m4.93 4.93 14.14 14.14"></path>
+                  <path d="M19.07 4.93 4.93 19.07"></path>
+                </svg>
+              }
+
+              @if (service.icon === 'google') {
+                <span class="google-letter">G</span>
+              }
+
+              @if (service.icon === 'search') {
+                <svg viewBox="0 0 24 24">
+                  <circle cx="10.8" cy="10.8" r="6.8"></circle>
+                  <path d="m16 16 5 5"></path>
+                </svg>
+              }
+
+              @if (service.icon === 'lightning') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M13 2 4 14h7l-1 8 10-13h-7z"></path>
+                </svg>
+              }
+
+              @if (service.icon === 'diamond') {
+                <svg viewBox="0 0 24 24">
+                  <path d="M3 8 7 3h10l4 5-9 13z"></path>
+                  <path d="M3 8h18"></path>
+                  <path d="m7 3 5 18 5-18"></path>
+                </svg>
+              }
+
+            </div>
+
+          </div>
+
+          <div class="service-content">
+
+            <p class="service-tag">
+              {{ service.tag }}
+            </p>
+
+            <h3>{{ service.title }}</h3>
+
+            <p class="service-desc">
+              {{ service.desc }}
+            </p>
+
+          </div>
+
+          <a
+            href="#contatti"
+            class="card-arrow"
+            aria-label="Richiedi informazioni"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M7 17 17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </a>
+
+        </article>
+
+      }
+
+    </div>
+
   </div>
+
 </section>

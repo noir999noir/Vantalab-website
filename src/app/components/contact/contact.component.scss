@@ -254,3 +254,8 @@
     flex-wrap: wrap;
   }
 }
+/* Consistent monochrome interface icons */
+.contact .ui-icon { display:inline-block; width:16px; height:16px; vertical-align:middle; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.contact .submit-btn .ui-icon { margin-left:12px; }
+.location-address .ui-icon { margin-left:8px; }
+.location-bottom .ui-icon { margin-left:5px; }

@@ -15,3 +15,8 @@
 .hero-meta span:first-child { color: var(--red); }
 .hero-side-note { position: absolute; right: 30px; top: 48%; writing-mode: vertical-rl; color: #666; font-size: 8px; letter-spacing: .25em; }
 @media(max-width:700px) { .hero { min-height: 760px; height: 100svh; max-height: 900px; padding-top: 74px; }.hero-title { font-size: clamp(57px, 15vw, 84px); margin-top: 28px; }.hero-copy { font-size: 14px; max-width: 330px; }.hero-watermark { font-size: 120vw; right: -18%; top: 25%; opacity: .7; }.hero-meta { margin-top: 75px; }.hero-meta span:nth-child(2) { display: none; }.hero-side-note { display: none; }.hero-actions { gap: 20px; flex-wrap: wrap; } }
+
+/* Monochrome SVG navigation icons */
+.hero .ui-icon { display:inline-block; width:15px; height:15px; vertical-align:middle; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.hero-actions .btn .ui-icon { margin-left:10px; }
+.hero-meta .ui-icon { width:11px; height:11px; margin-left:4px; }
